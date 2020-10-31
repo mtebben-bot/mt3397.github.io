@@ -11,5 +11,8 @@ navbar:
       href: http://github.com/mtebben-bot/
     - icon: fa-linkedin fa-lg
       href: http://www.linkedin.com/in/megan-tebbenhoff/
-output:
-  html_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: yeti

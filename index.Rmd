@@ -1,14 +1,12 @@
 ---
 title: "Hello, world!"
-output: 
-  html_document:
-    toc: true
-    toc_float: true
 ---
 
 ### I made a website!
 
 This is my website. It is cool that I have a website.
+
+
 
 
 ### Here is my resume.
