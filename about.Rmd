@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+### About this site
+
+Not a lot to say, this is just a website I made for P8105 in November 2020. Carry on.
