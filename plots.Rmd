@@ -21,7 +21,7 @@ Next, I want to clean my data.
 ```{r}
 nyc_rest = 
   rest_inspec %>% 
-  select(boro, critical_flag, cuisine_description, dba, zipcode, grade) %>% 
+  select(boro, critical_flag, cuisine_description, dba, zipcode, score, grade, grade_date) %>% 
   filter(
     !is.na(grade)
   )
@@ -29,9 +29,42 @@ nyc_rest =
 
 ### Plot 1
 
-Using my clean dataset, I want to make a graph
+Using my clean dataset, I want to make a graph looking at grades by borough.
 
+```{r}
+nyc_rest %>% 
+  count(grade, boro) %>% 
+  mutate(
+    grade = fct_reorder(grade, n)) %>%
+  filter(
+    grade %in% c("A", "B", "C"),
+    boro != "Missing"
+    ) %>% 
+  plot_ly(
+    x = ~boro, y = ~n, color = ~grade, type = "bar", colors = "viridis"
+  )
+```
 
+This bar graph shows us the number of restaurants by grade in each of the five boroughs. Viewers can select one of the letter grades in the key to look at individual grading levels in each borough. Viewers can also hover over the bars to get a count for the individual borough.
 
+### Plot 2
+
+Using my clean dataset, I want to make a scatterplot looking at the dates of inspections by borough.
+
+```{r}
+nyc_rest %>% 
+  filter(boro != "Missing") %>% 
+  count(grade_date, boro) %>%
+  plot_ly(
+    x = ~grade_date, y = ~n, type = "scatter", color = ~boro, mode = "markers", colors = "viridis", alpha = 0.5
+  )
+  
+```
+
+### Plot 3
+
+```{r}
+nyc_rest
+```
 
 
