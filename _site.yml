@@ -6,7 +6,7 @@ navbar:
     - text: "About me"
       href: about.html
     - text: "Plots"
-      href: plots.html
+      href: flexdashplots.html
     - icon: fa-envelope fa-lg
       href: mailto:<tebbenho@usc.edu>
     - icon: fa-github fa-lg

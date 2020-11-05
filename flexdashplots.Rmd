@@ -6,7 +6,7 @@ output:
     vertical_layout: fill
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 library(p8105.datasets)
 library(tidyverse)
 library(plotly)
@@ -64,8 +64,6 @@ nyc_rest %>%
   plot_ly(
     x = ~boro, y = ~score, type = "box", color = ~boro, colors = "viridis"
   )
-
-rmarkdown::render("flexdashplots.Rmd", output_format = "flexdashboard::flex_dashboard")
 ```
 
 
