@@ -6,24 +6,14 @@ output:
     vertical_layout: fill
 ---
 
-### Loading libraries
-
-Here, I am loading my libraries and dataset.
-
-```{r}
+```{r setup, include=FALSE}
 library(p8105.datasets)
 library(tidyverse)
 library(plotly)
 library(flexdashboard)
 
 data("rest_inspec")
-```
 
-### Cleaning data
-
-Next, I want to clean my data.
-
-```{r}
 nyc_rest = 
   rest_inspec %>% 
   select(boro, critical_flag, cuisine_description, dba, zipcode, score, grade, grade_date) %>% 
@@ -32,9 +22,10 @@ nyc_rest =
   )
 ```
 
-### Plot 1
+Column {data-width=650}
+-----------------------------------------------------------------------
 
-Using my clean dataset, I want to make a graph looking at grades by borough.
+### Chart A
 
 ```{r}
 nyc_rest %>% 
@@ -50,11 +41,10 @@ nyc_rest %>%
   )
 ```
 
-This bar graph shows us the number of restaurants by grade in each of the five boroughs. Viewers can select one of the letter grades in the key to look at individual grading levels in each borough. Viewers can also hover over the bars to get a count for the individual borough.
+Column {data-width=350}
+-----------------------------------------------------------------------
 
-### Plot 2
-
-Using my clean dataset, I want to make a scatterplot looking at the dates of inspections by borough.
+### Chart B
 
 ```{r}
 nyc_rest %>% 
@@ -63,14 +53,9 @@ nyc_rest %>%
   plot_ly(
     x = ~grade_date, y = ~n, type = "scatter", color = ~boro, mode = "markers", colors = "viridis", alpha = 0.5
   )
-  
 ```
 
-This plot shows the count and dates of inspections color coded by borough. You can select one borough at a time from the key to see its individual chart.
-
-### Plot 3
-
-Using my clean data, I want to plot the scores of bagel places in each borough.
+### Chart C
 
 ```{r}
 nyc_rest %>% 
@@ -79,7 +64,11 @@ nyc_rest %>%
   plot_ly(
     x = ~boro, y = ~score, type = "box", color = ~boro, colors = "viridis"
   )
+
+rmarkdown::render("flexdashplots.Rmd", output_format = "flexdashboard::flex_dashboard")
 ```
 
-This plot shows the scores for each of the boroughs' bagel places (the lower score, the better grade). You can see the quartiles and median values by each borough.
+
+
+
 
