@@ -3,8 +3,10 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About"
+    - text: "About me"
       href: about.html
+    - text: "Plots"
+      href: plots.html
     - icon: fa-envelope fa-lg
       href: mailto:<tebbenho@usc.edu>
     - icon: fa-github fa-lg

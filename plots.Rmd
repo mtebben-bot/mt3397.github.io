@@ -1,0 +1,37 @@
+---
+title: "Plotly plots"
+---
+
+### Loading libraries
+
+Here, I am loading my libraries and dataset.
+
+```{r}
+library(p8105.datasets)
+library(tidyverse)
+library(plotly)
+
+data("rest_inspec")
+```
+
+### Cleaning data
+
+Next, I want to clean my data.
+
+```{r}
+nyc_rest = 
+  rest_inspec %>% 
+  select(boro, critical_flag, cuisine_description, dba, zipcode, grade) %>% 
+  filter(
+    !is.na(grade)
+  )
+```
+
+### Plot 1
+
+Using my clean dataset, I want to make a graph
+
+
+
+
+

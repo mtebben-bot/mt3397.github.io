@@ -1,7 +1,20 @@
 ---
-title: "About"
+title: "About me"
 ---
+### Academic Experience
 
-### About this site
+I graduated from USC in May 2019 with dual degrees in International Relations and Neuroscience. I am currently a second-year MPH student at the Mailman School of Public Health in the department of Epidemiology. I am also getting my certificate in Public Health and Humanitarian Action.
 
-Not a lot to say, this is just a website I made for P8105 in November 2020. Carry on.
+
+### Professional Experience
+
+I worked with the National Institutes of Health as a Downstream Production Intern in the Vaccine Production Program and Laboratory in Gaithersburg, Maryland. I assisted in the development of improved protocols for vaccine purification processes. I independently conducted experiments over the course of two summers to reduce waste and increase the efficiency of the processes necessary to properly purify vaccine candidate molecules.
+
+
+### Resume
+
+Want to know more about what I've done? Here is my resume:
+
+```{r, echo=FALSE}
+xfun::embed_file("2020_resume_tebbenhoff.pdf", text = "Megan Tebbenhoff Resume")
+```

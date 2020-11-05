@@ -6,12 +6,4 @@ title: "Hello, world!"
 
 This is my website. It is cool that I have a website.
 
-
-
-
-### Here is my resume.
-
-```{r}
-xfun::embed_file("2020_resume_tebbenhoff.pdf", text = "Megan Tebbenhoff Resume")
-```
-
+This website contains many things. You can find these things in the menu on the upper right-hand side. They include information about me and some plots using the NYC Restuarant Inspections dataset.
